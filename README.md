@@ -72,6 +72,15 @@ The system consists of the following components:
 
 3. **Insert Activity (via Kafka)**
    - **Description:** Activities are inserted into the system through Kafka. The Kafka consumer listens to the `activity_tracking` topic, processes incoming messages, and logs the activity into the `activity` table.
+   - **Sample Kafka Message:**
+     ```json
+     {
+       "name": "User Login",
+       "description": "User logged in successfully"
+     }
+     ```
+   - The above message would be consumed by the Kafka consumer, processed, and then inserted into the `activity` table with the provided `name` and `description`.
+  
 
 ## Database Schema
 
