@@ -14,6 +14,6 @@ router = APIRouter()
 async def insert(
     activity_request: activity_request.InsertActivityRequest,
 ) -> None:
-    return await activity_service.ActivityService().insert(
+    return await activity_service.ActivityService().insert_activity_to_db(
         activity_request.model_dump(exclude_none=True)
     )
