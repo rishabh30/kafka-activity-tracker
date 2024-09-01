@@ -37,11 +37,7 @@ The system consists of the following components:
      ```json
      {
        "id": "550e8400-e29b-41d4-a716-446655440000",
-       "name": "John Doe",
-       "mobile": "1234567890",
-       "email": "john.doe@example.com",
-       "created_at": "2024-09-01T12:34:56Z",
-       "updated_at": "2024-09-01T12:34:56Z"
+       "message": "User created successfully"
      }
      ```
 
@@ -69,8 +65,17 @@ The system consists of the following components:
        }
      ]
      ```
-
-3. **Insert Activity (via Kafka)**
+3. **Insert Activity**
+   - **Endpoint:** `POST /activity/v1/insert`
+   - **Description:** Inserts a new activity.
+   - **Request Body:**
+     ```json
+     {
+       "name": "User Login",
+       "description": "User logged in successfully"
+     }
+     ```
+4. **Insert Activity (via Kafka)**
    - **Description:** Activities are inserted into the system through Kafka. The Kafka consumer listens to the `activity_tracking` topic, processes incoming messages, and logs the activity into the `activity` table.
    - **Sample Kafka Message:**
      ```json
