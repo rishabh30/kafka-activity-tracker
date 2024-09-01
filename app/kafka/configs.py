@@ -1,0 +1,10 @@
+import os
+
+
+class KafkaConfig:
+    BOOTSTRAP_SERVER = os.getenv("KAFKA_BOOTSTRAP_SERVER", "127.0.0.1:9092")
+    TOPIC_RETENTION_PERIOD = os.getenv("KAFKA_TOPIC_RETENTION_PERIOD", "6048000")
+    NUM_PARTITIONS = int(os.getenv("KAFKA_TOPIC_NUM_PARTITIONS", 1))
+    REPLICATION_FACTOR = int(os.getenv("KAFKA_TOPIC_REPLICATION_FACTOR", 1))
+    GROUP_NAME = "activity_tracking"
+    AUTO_OFFSET_RESET = "earliest"
