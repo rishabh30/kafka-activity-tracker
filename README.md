@@ -23,7 +23,7 @@ The system consists of the following components:
 ## API Endpoints
 
 1. **Create a New User**
-   - **Endpoint:** `POST /user/v1/list`
+   - **Endpoint:** `POST /user/v1/create`
    - **Description:** Creates a new user in the system.
    - **Request Body:**
      ```json
@@ -46,7 +46,7 @@ The system consists of the following components:
      ```
 
 2. **Get Users List**
-   - **Endpoint:** `GET /api/users`
+   - **Endpoint:** `GET /user/v1/list`
    - **Description:** Retrieves a list of all users in the system.
    - **Response:**
      ```json
